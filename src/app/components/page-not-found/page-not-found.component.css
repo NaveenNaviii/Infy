@@ -1,0 +1,7 @@
+h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 210px;
+    font-weight: 900;
+    text-shadow: 2px 4px 8px ;
+}
