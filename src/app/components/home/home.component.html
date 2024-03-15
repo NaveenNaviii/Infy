@@ -1,3 +1,16 @@
-<p>home works!</p>
 
+<div class="container">
 
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let r of result">
+            <td>{{r.id}}</td>
+            <td>{{r.name}}</td>
+            <td>{{r.email}}</td>
+        </tr>
+    </table>
+</div>
