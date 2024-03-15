@@ -12,7 +12,7 @@
               <input type="password" class="form-control" formControlName="pass">
               <span *ngIf="pass?.invalid && pass?.touched" style="color: red;">Enter a Valid Password</span>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
           </form>
     </div>
 </div>

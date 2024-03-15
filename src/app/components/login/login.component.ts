@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
 
+  // constructor(private route:Router){}
+
   loginForm=new FormGroup({
-    email:new FormControl("",[Validators.required,Validators.pattern('')]),
-    pass:new FormControl("",[Validators.required,Validators.pattern('')])
+    email:new FormControl("",[Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
+    pass:new FormControl("",[Validators.required,Validators.pattern('(?=^.{8,}$)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$')])
   })
 
   get email(){
@@ -23,6 +26,7 @@ export class LoginComponent {
 
   login(){
     console.log(this.loginForm.value);
+    // this.route.navigate(['/dash'])
     
   }
 
